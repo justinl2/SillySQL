@@ -1,0 +1,34 @@
+# Test 7
+CREATE Songs 3 string string bool Artist songName isGood?
+INSERT INTO Songs 9 ROWS
+LilDurk Robbery true
+Sweet Ballroom_Blitz false
+Drake MIA false
+JuiceWRLD Empty true
+LilUzi Neon_Guts true
+KanyeWest Flashing_Lights false
+CharliePuth Empty true
+KevinAbstract Empty true
+FrankieValli Walk_Like_a_Man false
+PRINT FROM Songs 3 Artist songName isGood? WHERE songName = Empty
+PRINT FROM Songs 3 Artist songName isGood? WHERE songName < Empty
+PRINT FROM Songs 3 Artist songName isGood? WHERE songName > Empty
+GENERATE FOR Songs bst INDEX ON songName
+PRINT FROM Songs 2 Artist songName WHERE songName > Empty
+PRINT FROM Songs 2 Artist songName WHERE songName = Empty
+PRINT FROM Songs 2 Artist songName WHERE songName < Empty
+INSERT INTO Songs 2 ROWS
+JuiceWRLD Feeling true
+FrankSinatra Thats_Life false
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName > Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName < Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName = Empty
+DELETE FROM Songs WHERE songName = Robbery
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName > Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName < Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName = Empty
+DELETE FROM Songs WHERE songName < Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName > Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName < Empty
+PRINT FROM Songs 3 songName Artist isGood? WHERE songName = Empty
+QUIT

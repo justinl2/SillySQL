@@ -1,0 +1,34 @@
+# Test 4
+CREATE Songs 3 string string bool song_name writer_name is_good
+CREATE Bands 5 string string int double bool name acronym how_many rating are_good
+CREATE Artists 3 string bool bool name is_dead good_art
+INSERT INTO Songs 2 ROWS
+kids Mac_Miller true
+Turban Yeat true
+INSERT INTO Bands 3 ROWS
+John_Mayer JM 975927 57.98 false
+Glaive Glv 231893 39.79 false
+Kendrick Lamar 564689 55.25 false
+DELETE FROM Bands WHERE rating > 61.11
+INSERT INTO Songs 2 ROWS
+Role_Modelz JCole false
+Slow_Jamz Kanye true
+DELETE FROM Songs WHERE emotion = Slow_Jamz
+DELETE FROM Songs WHERE writer_name = Kanye
+INSERT INTO Artists 3 ROWS
+Mac_Miller true false
+Yeat false true
+JCole true true
+PRINT FROM Artists 2 name is_dead WHERE is_dead < true
+PRINT FROM Songs 1 writer_name WHERE writer_name < Yeat
+INSERT INTO Bands 2 ROWS
+All_I_Do Logic 99222 32.94 true
+Green_Bean Young_Nudy 3816111 345 false
+JOIN Songs AND Artists WHERE is_good = good_art AND PRINT 4 is_dead 1 emotion 1 emotion 1 name 2
+REMOVE Songs
+PRINT FROM Artists 2 name good_art WHERE name > Mac_Miller
+REMOVE Artists
+PRINT FROM Bands 3 how_many are_good name WHERE how_many < 611111
+PRINT FROM Bands 3 how_many are_good name WHERE how_many = 58.99
+REMOVE Bands
+QUIT

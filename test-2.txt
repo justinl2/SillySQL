@@ -1,0 +1,29 @@
+# Test 2
+CREATE Songs 3 bool string int is_good song_name popularity
+GENERATE FOR Songs bst INDEX ON song_name
+PRINT FROM Songs 2 song_name popularity ALL
+INSERT INTO Songs 4 ROWS
+true Something_In_The_Way 13
+false Smells_Like_Teen_Spirit 15
+false Heart_Shaped_Box 12
+true Come_As_You_Are 19
+PRINT FROM Songs 1 is_good WHERE popularity > 2
+DELETE FROM Songs WHERE is_good = false
+GENERATE FOR Songs bst INDEX ON is_good
+PRINT FROM Songs 2 song_name popularity WHERE is_good = false
+PRINT FROM Songs 2 song_name popularity WHERE is_good = true
+INSERT INTO Songs 2 ROWS
+false Something_In_The_Way 13
+false Come_As_You_Are 19
+CREATE Bands 3 string int bool band_name rating is_good
+INSERT INTO Bands 2 ROWS
+Nirvana 10 true
+Weezer 10 true
+PRINT FROM Bands 3 band_name rating is_good WHERE is_good = true
+GENERATE FOR Songs hash INDEX ON song_name
+GENERATE FOR Songs hash INDEX ON popularity
+PRINT FROM Songs 3 is_good popularity song_name WHERE song_name = hurt
+DELETE FROM Songs WHERE popularity < 7
+GENERATE FOR Songs bst INDEX ON is_good
+PRINT FROM Songs 2 popularity song_name WHERE is_good = false 
+QUIT

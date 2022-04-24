@@ -1,0 +1,24 @@
+# Test 8
+CREATE Songs 3 bool string int isGood songName rating
+GENERATE FOR Songs bst INDEX ON songName
+PRINT FROM Songs 2 songName rating ALL
+INSERT INTO Songs 4 rows
+true Lightbeam 5
+false Warp 7
+false Warp 4
+true Nebula 11
+PRINT FROM Songs 1 isGood WHERE rating > 5
+DELETE FROM Songs WHERE isGood = false
+GENERATE FOR Songs bst INDEX ON isGood
+PRINT FROM Songs 2 songName rating WHERE isGood = false
+PRINT FROM Songs 2 songName rating WHERE isGood = true
+INSERT INTO Songs 2 rows
+false Lightbeam 5
+false Nebula 11
+GENERATE FOR Songs hash INDEX ON songName
+GENERATE FOR Songs hash INDEX ON rating
+PRINT FROM Songs 3 isGood rating songName WHERE songName = Lightbeam
+DELETE FROM Songs WHERE rating < 10
+GENERATE FOR Songs bst INDEX ON isGood
+PRINT FROM Songs 2 rating songName WHERE isGood = false 
+QUIT

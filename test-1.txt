@@ -1,0 +1,34 @@
+# Test 1
+CREATE Not_Used 5 string string string string string this is not being used
+CREATE songs 4 string bool bool int name is_good is_new listeners
+PRINT FROM songs 4 name is_good is_new listeners ALL
+INSERT INTO songs 4 rows
+Under_The_Bridge true true 15
+Californication false false 16
+Can't_Stop true false 15
+Snow(Hey_Oh) false true 47
+PRINT FROM songs 2 name is_good WHERE is_new = true
+GENERATE FOR songs bst INDEX ON is_new
+PRINT FROM songs 3 name is_good listeners ALL
+PRINT FROM songs 2 name is_new WHERE listeners < 16
+DELETE FROM songs WHERE is_new = true
+INSERT INTO songs 2 ROWS
+Californication false false 16
+Can't_Stop false true 5
+PRINT FROM songs 4 name is_good is_new listeners ALL
+GENERATE FOR songs hash INDEX ON name
+PRINT FROM songs 2 is_new is_good WHERE name = Can't_Stop
+PRINT FROM songs 2 col2 col1 WHERE is_good = false
+GENERATE FOR songs bst INDEX ON listeners
+PRINT FROM songs 2 name is_good ALL
+PRINT FROM songs 2 name is_new WHERE listeners > 6
+DELETE FROM songs WHERE name = Can't_Stop
+CREATE bands 1 string band_name
+PRINT FROM bands 1 band_name WHERE band_name = The_Red_Hot_Chili_Peppers
+INSERT INTO bands 1 ROWS
+Sublime
+PRINT FROM bands 1 band_name WHERE band_name = Sublime
+GENERATE FOR bands bst INDEX ON band_name
+DELETE FROM bands WHERE band_name = Sublime  
+PRINT FROM bands 1 band_name WHERE hi = Sublime
+QUIT

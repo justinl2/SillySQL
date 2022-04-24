@@ -1,0 +1,35 @@
+# Test 3
+CREATE Songs 3 string string bool song_name writer_name is_good
+CREATE Bands 5 string string int double bool name acronym how_many rating are_good
+CREATE Artists 3 string bool bool name is_dead good_art
+INSERT INTO Songs 2 ROWS
+Margaritaville Jimmy_Buffet true
+Rich_Girl Hall&Oates true
+INSERT INTO Bands 3 ROWS
+The_Red_Hot_Chili_Peppers RHCP 975927 57.98 false
+Catfish_And_The_Bottlemen CATB 3816111 345 false
+Weezer Wee 564689 66.36 false
+INSERT INTO Bands 2 ROWS
+Nirvana Nirv 98111 32.94 true
+Paramore PM 231893 39.79 false
+GENERATE FOR Bands bst INDEX ON rating
+PRINT FROM Bands 3 rating are_good acronym WHERE rating < 71.11
+DELETE FROM Bands WHERE rating > 311.11
+GENERATE FOR Bands hash INDEX ON rating
+PRINT FROM Bands 2 rating are_good WHERE rating = 66.36
+GENERATE FOR Bands bst INDEX ON rating
+PRINT FROM Bands 2 rating are_good WHERE rating = 66.36
+GENERATE FOR Bands bst INDEX ON how_many
+PRINT FROM Bands 2 how_many name WHERE how_many > 211111
+GENERATE FOR Bands bst INDEX ON how_many
+PRINT FROM Bands 2 how_many name WHERE how_many = 231873
+GENERATE FOR Bands hash INDEX ON how_many
+PRINT FROM Bands 2 how_many name WHERE how_many = 231893
+INSERT INTO Artists 3 ROWS
+DaVinci true false
+Michaelangelo false true
+VanGogh true true
+GENERATE FOR Artists hash INDEX ON good_art
+PRINT FROM Artists 2 name good_art WHERE is_dead > true
+PRINT FROM Songs 1 writer_name ALL
+QUIT
